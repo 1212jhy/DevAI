@@ -3,6 +3,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 
 # LangChain이 지원하는 다른 채팅 모델을 사용합니다. 여기서는 Ollama를 사용합니다.
+#2314
 llm = ChatOllama(model="EEVE-KR:latest")
 
 # 프롬프트 설정
