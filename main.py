@@ -50,8 +50,8 @@ Question: {question}
 Context: {context} 
 Answer:"""
 
-st.set_page_config(page_title="OLLAMA Local 모델 테스트", page_icon="💬")
-st.title("OLLAMA Local 모델 테스트")
+st.set_page_config(page_title="OLLAMA QnA 모델 테스트", page_icon="💬")
+st.title("OLLAMA Local 모델 테스트 by Nextlink")
 
 
 if "messages" not in st.session_state:
@@ -100,8 +100,8 @@ def embed_file(file):
         # - Mac M1, M2, M3: "mps"
         # - CPU: "cpu"
         model_kwargs = {
-            # "device": "cuda"
-            "device": "mps"
+            "device": "cuda"
+            # "device": "mps"
             # "device": "cpu"
         }
         encode_kwargs = {"normalize_embeddings": True}
