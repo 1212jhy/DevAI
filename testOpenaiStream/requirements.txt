@@ -1,5 +1,5 @@
 streamlit
-pysqlite3-binary
+pysqlite3
 langchain
 chromadb
 unstructured
