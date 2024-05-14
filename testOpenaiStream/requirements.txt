@@ -7,5 +7,5 @@ faiss-cpu
 tiktoken
 openai
 pypdf
-loguru
+loguru==0.6.0
 docx2txt
