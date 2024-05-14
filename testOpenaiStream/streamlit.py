@@ -38,7 +38,7 @@ def main():
     with st.sidebar:
         uploaded_files =  st.file_uploader("Upload your file",type=['pdf','docx'],accept_multiple_files=True)
         openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
-        process = st.button("Process")
+        process = st.button("임베딩")
     if process:
         if not openai_api_key:
             st.info("Please add your OpenAI API key to continue.")
@@ -53,7 +53,7 @@ def main():
 
     if 'messages' not in st.session_state:
         st.session_state['messages'] = [{"role": "assistant", 
-                                        "content": "안녕하세요! 먼저 문서를 등록해서 임베딩이 완료되면, 궁금한 내용을 언제든 물어봐주세요!"}]
+                                        "content": "안녕하세요! 먼저 OpenAI API key와 문서 등록 후 임베딩이 완료된 뒤, 궁금한 내용을 물어보세요!"}]
 
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
