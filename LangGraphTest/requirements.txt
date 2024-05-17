@@ -1,5 +1,4 @@
 langchain_community
-langchain_community.embeddings
 langchain-openai 
 langchain_core
 langchain 
