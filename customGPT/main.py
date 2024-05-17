@@ -1,4 +1,3 @@
-import streamlit
 from langchain_community.chat_message_histories import StreamlitChatMessageHistory
 from langchain_core.runnables import RunnableConfig
 from langchain_core.tracers import LangChainTracer
