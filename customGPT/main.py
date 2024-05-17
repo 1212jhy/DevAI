@@ -9,7 +9,7 @@ from langchain.schema import ChatMessage
 from langchain_openai import ChatOpenAI
 from langsmith import Client
 import streamlit as st
-from streamlit_feedback import streamlit_feedback
+import streamlit_feedback
 import time
 import os
 
