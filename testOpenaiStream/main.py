@@ -158,6 +158,6 @@ def get_conversation_chain(vetorestore,openai_api_key):
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(main, host="0.0.0.0", port=80)
+    uvicorn.run(main)
 
 
