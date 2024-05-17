@@ -18,6 +18,7 @@ from langchain.vectorstores import FAISS
 # from streamlit_chat import message
 from langchain.callbacks import get_openai_callback
 from langchain.memory import StreamlitChatMessageHistory
+from dotenv import load_dotenv
 
 
 load_dotenv()
