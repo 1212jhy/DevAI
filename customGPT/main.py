@@ -18,7 +18,7 @@ st.set_page_config(page_title="nextlink GPT-4o", page_icon="🦜")
 st.title("🦜 피드백 데모")
 
 # Set LangSmith environment variables
-os.environ["OPENAI_API_KEY"] = st.secrets['openai']["OPENAI_API_KEY"]
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_ENDPOINT"] = st.secrets["LANGCHAIN_ENDPOINT"]
 os.environ["LANGCHAIN_PROJECT"] = st.secrets["LANGCHAIN_PROJECT"]
