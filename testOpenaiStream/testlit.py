@@ -21,6 +21,7 @@ from langchain.memory import StreamlitChatMessageHistory
 
 
 load_dotenv()
+os.getenv("OPENAI_API_KEY")
 
 def main():
     st.set_page_config(
