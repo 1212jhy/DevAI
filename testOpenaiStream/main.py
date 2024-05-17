@@ -19,6 +19,10 @@ from langchain.vectorstores import FAISS
 from langchain.callbacks import get_openai_callback
 from langchain.memory import StreamlitChatMessageHistory
 
+from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
+main = FastAPI()
+
 def main():
     st.set_page_config(
     page_title="DirChat",
@@ -151,9 +155,9 @@ def get_conversation_chain(vetorestore,openai_api_key):
     return conversation_chain
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(main)
+    uvicorn.run(app, host="127.0.0.1", port=80)
 
 
