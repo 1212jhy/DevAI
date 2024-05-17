@@ -152,6 +152,8 @@ def get_conversation_chain(vetorestore,openai_api_key):
 
 
 if __name__ == '__main__':
-    main()
+    import uvicorn
+
+    uvicorn.run(app, host="127.0.0.1", port=80)
 
 
