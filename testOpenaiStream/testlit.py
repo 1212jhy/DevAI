@@ -34,7 +34,7 @@ def main():
     page_title="DirChat",
     page_icon=":books:")
 
-    st.title("_넥스링크 QnA 모델 :red[테스트]_ :books:")
+    st.title("_Nexlink GPT4o QnA 모델 :red[테스트]_ :books:")
 
     if "conversation" not in st.session_state:
         st.session_state.conversation = None
