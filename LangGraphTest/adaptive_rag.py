@@ -1,6 +1,6 @@
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import GPT4AllEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.prompts import PromptTemplate
 from langchain_community.chat_models import ChatOllama
 from langchain_core.output_parsers import JsonOutputParser
@@ -20,6 +20,12 @@ from langchain_community.document_loaders import PyPDFLoader
 import streamlit as st
 import os
 local_llm = "llama3"
+
+embeddings_model = HuggingFaceEmbeddings(
+    model_name='jhgan/ko-sroberta-nli',
+    model_kwargs={'device':'gpu'},
+    encode_kwargs={'normalize_embeddings':True},
+)
 
 os.environ["TAVILY_API_KEY"] = st.secrets["TAVILY_API_KEY"]
 tavily_api_key = os.environ['TAVILY_API_KEY']
@@ -67,7 +73,7 @@ if process:
     vectorstore = Chroma.from_documents(
         documents=text_chunks,
         collection_name="rag-chroma",
-        embedding=GPT4AllEmbeddings(),
+        embedding=embeddings_model(),
     )
     retriever = vectorstore.as_retriever()
     llm = ChatOllama(model=local_llm, format="json", temperature=0)
