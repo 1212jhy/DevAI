@@ -23,7 +23,7 @@ local_llm = "llama3"
 
 embeddings_model = HuggingFaceEmbeddings(
     model_name='jhgan/ko-sroberta-nli',
-    model_kwargs={'device':'gpu'},
+    model_kwargs={'device':'cuda'},
     encode_kwargs={'normalize_embeddings':True},
 )
 
