@@ -20,7 +20,10 @@ from langchain_community.document_loaders import PyPDFLoader
 import streamlit as st
 import os
 local_llm = "llama3"
-tavily_api_key = os.environ['TAVILY_API_KEY'] = ''
+
+os.environ["TAVILY_API_KEY"] = st.secrets["TAVILY_API_KEY"]
+tavily_api_key = os.environ['TAVILY_API_KEY']
+
 st.title("Multi-PDF ChatBot using LLAMA3 & Adaptive RAG")
 user_input = st.text_input("Question:", placeholder="Ask about your PDF", key='input')
 
@@ -56,7 +59,7 @@ if process:
 
 
     text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
-        chunk_size=250, chunk_overlap=0
+        chunk_size=500, chunk_overlap=50
     )
     text_chunks = text_splitter.split_documents(data)
 
