@@ -15,7 +15,7 @@ import os
 
 
 st.set_page_config(page_title="nextlink GPT-4o", page_icon="🦜")
-st.title("🦜 피드백 데모")
+st.title("🦜 GPT-4o 대화 테스트")
 
 # Set LangSmith environment variables
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
