@@ -75,7 +75,7 @@ if user_input := st.chat_input():
     st.chat_message("user").write(user_input)
     with st.chat_message("assistant"):
         stream_handler = StreamHandler(st.empty())
-        llm = ChatOpenAI(model="gpt-4o", streaming=True, callbacks=[stream_handler])
+        llm = ChatOpenAI(model="gpt-3.5-turbo", streaming=True, callbacks=[stream_handler])
         chain = prompt | llm
         chain_with_history = RunnableWithMessageHistory(
             chain,
