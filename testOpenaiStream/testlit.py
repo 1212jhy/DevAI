@@ -21,10 +21,13 @@ from langchain.memory import StreamlitChatMessageHistory
 from dotenv import load_dotenv
 
 
-load_dotenv()
-get_api_key = os.getenv("OPENAI_API_KEY")
+import os
+import openai
 
+# Setting the API key
+# openai.api_key = os.environ['OPENAI_API_KEY']
 
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 def main():
     st.set_page_config(
@@ -43,8 +46,8 @@ def main():
         st.session_state.processComplete = None
 
     with st.sidebar:
-        uploaded_files =  st.file_uploader("문서 파일 업로드",type=['pdf','docx'],accept_multiple_files=True)
-        openai_api_key = st.text_input("OpenAI API Key", key=get_api_key, type="password")
+        uploaded_files =  st.file_uploader("Upload your file",type=['pdf','docx'],accept_multiple_files=True)
+        openai_api_key = st.text_input("OpenAI API Key", key=openai.api_key, type="password")
         process = st.button("임베딩")
     if process:
         if not openai_api_key:
